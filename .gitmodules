@@ -1,0 +1,3 @@
+[submodule "libs/pce"]
+	path = libs/pce
+	url = https://github.com/MeoMuop3727/pce.git
