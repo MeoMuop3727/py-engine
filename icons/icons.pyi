@@ -84,6 +84,53 @@ class Icons:
 	JOYSTICK: IconType
 	KEY: IconType
 	KEYBOARD: IconType
+	KEY_0: IconType
+	KEY_1: IconType
+	KEY_2: IconType
+	KEY_3: IconType
+	KEY_4: IconType
+	KEY_5: IconType
+	KEY_6: IconType
+	KEY_7: IconType
+	KEY_8: IconType
+	KEY_9: IconType
+	KEY_A: IconType
+	KEY_ALT: IconType
+	KEY_ARROW_DOWN: IconType
+	KEY_ARROW_LEFT: IconType
+	KEY_ARROW_RIGHT: IconType
+	KEY_ARROW_UP: IconType
+	KEY_B: IconType
+	KEY_C: IconType
+	KEY_CTRL: IconType
+	KEY_D: IconType
+	KEY_E: IconType
+	KEY_ENTER: IconType
+	KEY_ESC: IconType
+	KEY_F: IconType
+	KEY_G: IconType
+	KEY_H: IconType
+	KEY_I: IconType
+	KEY_J: IconType
+	KEY_K: IconType
+	KEY_L: IconType
+	KEY_M: IconType
+	KEY_N: IconType
+	KEY_O: IconType
+	KEY_P: IconType
+	KEY_Q: IconType
+	KEY_R: IconType
+	KEY_S: IconType
+	KEY_SHIFT: IconType
+	KEY_SPACE: IconType
+	KEY_T: IconType
+	KEY_TAB: IconType
+	KEY_U: IconType
+	KEY_V: IconType
+	KEY_W: IconType
+	KEY_X: IconType
+	KEY_Y: IconType
+	KEY_Z: IconType
 	LADDER: IconType
 	LAYERS: IconType
 	LEVEL_UP: IconType
@@ -106,6 +153,20 @@ class Icons:
 	PORTAL: IconType
 	POTION: IconType
 	POWER: IconType
+	PS_CIRCLE: IconType
+	PS_CROSS: IconType
+	PS_DPAD: IconType
+	PS_HOME: IconType
+	PS_L1: IconType
+	PS_L2: IconType
+	PS_OPTIONS: IconType
+	PS_R1: IconType
+	PS_R2: IconType
+	PS_SHARE: IconType
+	PS_SQUARE: IconType
+	PS_STICK: IconType
+	PS_TOUCHPAD: IconType
+	PS_TRIANGLE: IconType
 	PUZZLE: IconType
 	REFRESH: IconType
 	REMOVE: IconType
@@ -128,6 +189,20 @@ class Icons:
 	STAR: IconType
 	STAR_HALF: IconType
 	STOP: IconType
+	SWITCH_A: IconType
+	SWITCH_B: IconType
+	SWITCH_CAPTURE: IconType
+	SWITCH_DPAD: IconType
+	SWITCH_HOME: IconType
+	SWITCH_L: IconType
+	SWITCH_MINUS: IconType
+	SWITCH_PLUS: IconType
+	SWITCH_R: IconType
+	SWITCH_STICK: IconType
+	SWITCH_X: IconType
+	SWITCH_Y: IconType
+	SWITCH_ZL: IconType
+	SWITCH_ZR: IconType
 	SWORD: IconType
 	SYNC: IconType
 	TAG: IconType
@@ -152,6 +227,19 @@ class Icons:
 	WATER_DROP: IconType
 	WIFI: IconType
 	WIND: IconType
+	XBOX_A: IconType
+	XBOX_B: IconType
+	XBOX_DPAD: IconType
+	XBOX_HOME: IconType
+	XBOX_LB: IconType
+	XBOX_LT: IconType
+	XBOX_MENU: IconType
+	XBOX_RB: IconType
+	XBOX_RT: IconType
+	XBOX_STICK: IconType
+	XBOX_VIEW: IconType
+	XBOX_X: IconType
+	XBOX_Y: IconType
 	XP: IconType
 
 	def register(cls, *icons: IconType): ...
