@@ -10,7 +10,7 @@ _FUNCTOOL_NAMES: list[str] = [
 ]
 
 """
-A set of approximately 150 common game icons, ready for immediate use with
+A set of approximately 150+ common game icons, ready for immediate use with
 `code2png` / `icon2png`. Each icon consists of an SVG markup string (24x24 viewBox)
 using `stroke="currentColor"` or `fill="currentColor"` to support runtime
 color changes (see the `code2png` function).
@@ -33,6 +33,18 @@ def _l(body: str) -> str:
  
 def _f(body: str) -> str:
     return f'<svg {_F}>{body}</svg>'
+
+def _btn(label: str) -> str:
+    """ Labeled round buttons (for A/B/X/Y, L1/R1, LB/RB...). """
+    return _l(f'<circle cx="12" cy="12" r="10"/><text x="12" y="16" font-size="10" text-anchor="middle" fill="currentColor" stroke="none">{label}</text>')
+ 
+def _bumper(label: str) -> str:
+    """ Rounded-rectangle shoulder/bumper buttons (L1, L2, LB, LT, ZL, ZR...). """
+    return _l(f'<rect x="2" y="7" width="20" height="10" rx="3"/><text x="12" y="16" font-size="9" text-anchor="middle" fill="currentColor" stroke="none">{label}</text>')
+  
+def _key(label: str) -> str:
+    """ Rounded-square keyboard key with a character or label. """
+    return _l(f'<rect x="2" y="2" width="20" height="20" rx="3"/><text x="12" y="16" font-size="9" text-anchor="middle" fill="currentColor" stroke="none">{label}</text>')
  
  
 _ICONS: dict[str, IconType] = {
@@ -212,4 +224,104 @@ _ICONS: dict[str, IconType] = {
     "CHESS": IconType("CHESS", _l('<path d="M10 4h4l1 3-2 2 2 2-1 4H9l-1-4 2-2-2-2z"/><line x1="7" y1="20" x2="17" y2="20"/><line x1="8" y1="15" x2="16" y2="15"/>')),
     "TOGGLE_ON": IconType("TOGGLE_ON", _l('<rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3.5" fill="currentColor" stroke="none"/>')),
     "TOGGLE_OFF": IconType("TOGGLE_OFF", _l('<rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="8" cy="12" r="3.5" fill="currentColor" stroke="none"/>')),
+
+    # ---------- Nintendo Switch ----------
+    "SWITCH_A": IconType("SWITCH_A", _btn("A")),
+    "SWITCH_B": IconType("SWITCH_B", _btn("B")),
+    "SWITCH_X": IconType("SWITCH_X", _btn("X")),
+    "SWITCH_Y": IconType("SWITCH_Y", _btn("Y")),
+    "SWITCH_L": IconType("SWITCH_L", _bumper("L")),
+    "SWITCH_R": IconType("SWITCH_R", _bumper("R")),
+    "SWITCH_ZL": IconType("SWITCH_ZL", _bumper("ZL")),
+    "SWITCH_ZR": IconType("SWITCH_ZR", _bumper("ZR")),
+    "SWITCH_PLUS": IconType("SWITCH_PLUS", _l('<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>')),
+    "SWITCH_MINUS": IconType("SWITCH_MINUS", _l('<circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/>')),
+    "SWITCH_HOME": IconType("SWITCH_HOME", _l('<circle cx="12" cy="12" r="10"/><path d="M8 13l4-4 4 4"/><path d="M9 12v4h6v-4"/>')),
+    "SWITCH_CAPTURE": IconType("SWITCH_CAPTURE", _l('<circle cx="12" cy="12" r="10"/><rect x="7" y="9" width="10" height="7" rx="1"/><path d="M9 9l1-1.5h4L15 9"/>')),
+    "SWITCH_DPAD": IconType("SWITCH_DPAD", _l('<path d="M12 3v18M3 12h18"/><rect x="9" y="9" width="6" height="6"/>')),
+    "SWITCH_STICK": IconType("SWITCH_STICK", _l('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>')),
+ 
+    # ---------- PlayStation ----------
+    "PS_CROSS": IconType("PS_CROSS", _l('<circle cx="12" cy="12" r="10"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/>')),
+    "PS_CIRCLE": IconType("PS_CIRCLE", _l('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>')),
+    "PS_SQUARE": IconType("PS_SQUARE", _l('<circle cx="12" cy="12" r="10"/><rect x="8.5" y="8.5" width="7" height="7"/>')),
+    "PS_TRIANGLE": IconType("PS_TRIANGLE", _l('<circle cx="12" cy="12" r="10"/><polygon points="12,8 16,15 8,15"/>')),
+    "PS_L1": IconType("PS_L1", _bumper("L1")),
+    "PS_L2": IconType("PS_L2", _bumper("L2")),
+    "PS_R1": IconType("PS_R1", _bumper("R1")),
+    "PS_R2": IconType("PS_R2", _bumper("R2")),
+    "PS_OPTIONS": IconType("PS_OPTIONS", _l('<circle cx="12" cy="12" r="10"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/>')),
+    "PS_SHARE": IconType("PS_SHARE", _l('<circle cx="12" cy="12" r="10"/><rect x="8" y="9" width="8" height="6" rx="1"/>')),
+    "PS_HOME": IconType("PS_HOME", _l('<circle cx="12" cy="12" r="10"/>')),
+    "PS_TOUCHPAD": IconType("PS_TOUCHPAD", _l('<rect x="2" y="7" width="20" height="10" rx="2"/>')),
+    "PS_DPAD": IconType("PS_DPAD", _l('<path d="M12 3v18M3 12h18"/><rect x="9" y="9" width="6" height="6"/>')),
+    "PS_STICK": IconType("PS_STICK", _l('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>')),
+ 
+    # ---------- Xbox ----------
+    "XBOX_A": IconType("XBOX_A", _btn("A")),
+    "XBOX_B": IconType("XBOX_B", _btn("B")),
+    "XBOX_X": IconType("XBOX_X", _btn("X")),
+    "XBOX_Y": IconType("XBOX_Y", _btn("Y")),
+    "XBOX_LB": IconType("XBOX_LB", _bumper("LB")),
+    "XBOX_RB": IconType("XBOX_RB", _bumper("RB")),
+    "XBOX_LT": IconType("XBOX_LT", _bumper("LT")),
+    "XBOX_RT": IconType("XBOX_RT", _bumper("RT")),
+    "XBOX_MENU": IconType("XBOX_MENU", _l('<circle cx="12" cy="12" r="10"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/>')),
+    "XBOX_VIEW": IconType("XBOX_VIEW", _l('<circle cx="12" cy="12" r="10"/><rect x="8" y="9" width="8" height="6" rx="1"/>')),
+    "XBOX_HOME": IconType("XBOX_HOME", _l('<circle cx="12" cy="12" r="10"/><polygon points="12,7 17,10 17,16 7,16 7,10"/>')),
+    "XBOX_DPAD": IconType("XBOX_DPAD", _l('<path d="M12 3v18M3 12h18"/><rect x="9" y="9" width="6" height="6"/>')),
+    "XBOX_STICK": IconType("XBOX_STICK", _l('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>')),
+ 
+    # ---------- Keyboard (chữ cái thông dụng trong game: WASD...) ----------
+    "KEY_A": IconType("KEY_A", _key("A")),
+    "KEY_B": IconType("KEY_B", _key("B")),
+    "KEY_C": IconType("KEY_C", _key("C")),
+    "KEY_D": IconType("KEY_D", _key("D")),
+    "KEY_E": IconType("KEY_E", _key("E")),
+    "KEY_F": IconType("KEY_F", _key("F")),
+    "KEY_G": IconType("KEY_G", _key("G")),
+    "KEY_H": IconType("KEY_H", _key("H")),
+    "KEY_I": IconType("KEY_I", _key("I")),
+    "KEY_J": IconType("KEY_J", _key("J")),
+    "KEY_K": IconType("KEY_K", _key("K")),
+    "KEY_L": IconType("KEY_L", _key("L")),
+    "KEY_M": IconType("KEY_M", _key("M")),
+    "KEY_N": IconType("KEY_N", _key("N")),
+    "KEY_O": IconType("KEY_O", _key("O")),
+    "KEY_P": IconType("KEY_P", _key("P")),
+    "KEY_Q": IconType("KEY_Q", _key("Q")),
+    "KEY_R": IconType("KEY_R", _key("R")),
+    "KEY_S": IconType("KEY_S", _key("S")),
+    "KEY_T": IconType("KEY_T", _key("T")),
+    "KEY_U": IconType("KEY_U", _key("U")),
+    "KEY_V": IconType("KEY_V", _key("V")),
+    "KEY_W": IconType("KEY_W", _key("W")),
+    "KEY_X": IconType("KEY_X", _key("X")),
+    "KEY_Y": IconType("KEY_Y", _key("Y")),
+    "KEY_Z": IconType("KEY_Z", _key("Z")),
+ 
+    # ---------- Keyboard (số) ----------
+    "KEY_0": IconType("KEY_0", _key("0")),
+    "KEY_1": IconType("KEY_1", _key("1")),
+    "KEY_2": IconType("KEY_2", _key("2")),
+    "KEY_3": IconType("KEY_3", _key("3")),
+    "KEY_4": IconType("KEY_4", _key("4")),
+    "KEY_5": IconType("KEY_5", _key("5")),
+    "KEY_6": IconType("KEY_6", _key("6")),
+    "KEY_7": IconType("KEY_7", _key("7")),
+    "KEY_8": IconType("KEY_8", _key("8")),
+    "KEY_9": IconType("KEY_9", _key("9")),
+ 
+    # ---------- Keyboard (phím chức năng thường dùng) ----------
+    "KEY_SPACE": IconType("KEY_SPACE", _l('<rect x="2" y="9" width="20" height="6" rx="2"/>')),
+    "KEY_SHIFT": IconType("KEY_SHIFT", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polygon points="12,7 17,13 14,13 14,17 10,17 10,13 7,13" fill="currentColor" stroke="none"/>')),
+    "KEY_CTRL": IconType("KEY_CTRL", _key("CTRL")),
+    "KEY_ALT": IconType("KEY_ALT", _key("ALT")),
+    "KEY_TAB": IconType("KEY_TAB", _key("TAB")),
+    "KEY_ESC": IconType("KEY_ESC", _key("ESC")),
+    "KEY_ENTER": IconType("KEY_ENTER", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polyline points="16,9 16,14 8,14"/><polyline points="11,11 8,14 11,17"/>')),
+    "KEY_ARROW_UP": IconType("KEY_ARROW_UP", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polyline points="8,14 12,9 16,14"/>')),
+    "KEY_ARROW_DOWN": IconType("KEY_ARROW_DOWN", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polyline points="8,10 12,15 16,10"/>')),
+    "KEY_ARROW_LEFT": IconType("KEY_ARROW_LEFT", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polyline points="14,8 9,12 14,16"/>')),
+    "KEY_ARROW_RIGHT": IconType("KEY_ARROW_RIGHT", _l('<rect x="2" y="2" width="20" height="20" rx="3"/><polyline points="10,8 15,12 10,16"/>')),
 }
