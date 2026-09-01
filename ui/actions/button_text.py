@@ -88,7 +88,7 @@ class ButtonText(UserInterfaceType):
 
                 if self._audios is not None: 
                     self._audios.play()
-                if self.func is not None or self.func is not isinstance(self.func, ...):
+                if self.func is not None:
                     self.func()
 
             self._modified_style = style

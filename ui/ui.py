@@ -67,7 +67,7 @@ class UserInterfaceType(GameObject):
                  connections = None):
         super().__init__(surface, audios, animations, None, connections)
 
-        self.func: Callable[[], None] = ...
+        self.func: Optional[Callable[[], None]] = None
 
         self._style = apply_instance(CSS_StyleType(), style)            # Default css style of UI
                                                                         # It helps restore default style after new states of UI is end
